@@ -1,0 +1,95 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Resume",
+    "description": "A resume describing one's education, skills, employment, projects, and so on.",
+    "type": "object",
+
+    "properties": {
+        "meta": {
+            "description": "Metadata about the resume",
+            "type": "object",
+            
+            "properties": {
+                "extends": {
+                    "description": "Resume file on which this one should be based. The extending file should be a delta that will be applied to the base. The base file may in turn extend another file recursively.",
+                    "type": "string"
+                },
+                "version": {
+                    "description": "The semantic version of this resume.",
+                    "type": "string"
+                },
+                "date": {
+                    "description": "The date on which this file was authored.",
+                    "type": "string"
+                }
+            }
+        },
+
+
+        "info": {
+            "description": "Basic resume information.",
+            "type": "object",
+
+            "properties": {
+                "firstname": {
+                    "description": "The candidate's first name.",
+                    "type": "string"
+                },
+                "lastname": {
+                    "description": "The candidate's last name",
+                    "type": "string"
+                },
+                "address": {
+                    "description": "The candidate's address.",
+                    "type": "object",
+                    "properties": {
+                        "street": {
+                            "description": "The candidate's street address.",
+                            "type": "string"
+                        },
+                        "city": {
+                            "description": "The candidate's city.",
+                            "type": "string"
+                        },
+                        "state": {
+                            "description": "The candidate's state.",
+                            "type": "string"
+                        },
+                        "zipcode": {
+                            "description": "The candidate's zipcode.",
+                            "type": "string"
+                        }
+                    },
+                    "required": ["street", "city", "state", "zipcode"]
+                },
+                "github": {
+                    "description": "A link to the candidate's GitHub profile.",
+                    "type": "string"
+                }
+            },
+
+            "required": ["firstname", "lastname"]
+        },
+
+
+        "contact": {
+            "description": "Contact information for the candidate.",
+            "type": "object",
+
+            "properties": {
+                "email": {
+                    "description": "The candidate's email address.",
+                    "type": "string"
+                },
+                "phone": {
+                    "description": "The candidte's phone number.",
+                    "type": "string"
+                },
+                "linkedin": {
+                    "description": "A link to the candidate's LinkedIn profile.",
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
