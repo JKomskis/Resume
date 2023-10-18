@@ -1,17 +1,16 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://github.com/JKomskis/Resume/blob/main/schema/resume.schema.json",
     "title": "Resume",
-    "description": "A resume describing one's education, skills, employment, projects, and so on.",
+    "description": "A resume describing one's education, skills, employment, projects, etc.",
     "type": "object",
-
     "properties": {
         "meta": {
             "description": "Metadata about the resume",
             "type": "object",
-            
             "properties": {
                 "extends": {
-                    "description": "Resume file on which this one should be based. The extending file should be a delta that will be applied to the base. The base file may in turn extend another file recursively.",
+                    "description": "Resume file on which this one should be based. The extending file should be a delta that will be applied to the base. The base file may in turn extend another file.",
                     "type": "string"
                 },
                 "version": {
@@ -19,77 +18,329 @@
                     "type": "string"
                 },
                 "date": {
-                    "description": "The date on which this file was authored.",
-                    "type": "string"
-                }
-            }
-        },
-
-
-        "info": {
-            "description": "Basic resume information.",
-            "type": "object",
-
-            "properties": {
-                "firstname": {
-                    "description": "The candidate's first name.",
-                    "type": "string"
-                },
-                "lastname": {
-                    "description": "The candidate's last name",
-                    "type": "string"
-                },
-                "address": {
-                    "description": "The candidate's address.",
-                    "type": "object",
-                    "properties": {
-                        "street": {
-                            "description": "The candidate's street address.",
-                            "type": "string"
-                        },
-                        "city": {
-                            "description": "The candidate's city.",
-                            "type": "string"
-                        },
-                        "state": {
-                            "description": "The candidate's state.",
-                            "type": "string"
-                        },
-                        "zipcode": {
-                            "description": "The candidate's zipcode.",
-                            "type": "string"
-                        }
-                    },
-                    "required": ["street", "city", "state", "zipcode"]
-                },
-                "github": {
-                    "description": "A link to the candidate's GitHub profile.",
+                    "description": "The date on which this file was authored or last revised.",
                     "type": "string"
                 }
             },
-
-            "required": ["firstname", "lastname"]
+            "required": [
+                "version",
+                "date"
+            ]
         },
-
-
-        "contact": {
-            "description": "Contact information for the candidate.",
+        "info": {
+            "description": "Basic resume information",
             "type": "object",
-
+            "properties": {
+                "firstname": {
+                    "description": "First name",
+                    "type": "string"
+                },
+                "lastname": {
+                    "description": "Last name",
+                    "type": "string"
+                },
+                "location": {
+                    "description": "Current location",
+                    "$ref": "#/$defs/location"
+                },
+                "github": {
+                    "description": "Github profile link",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "firstname",
+                "lastname"
+            ]
+        },
+        "contact": {
+            "description": "Contact information",
+            "type": "object",
             "properties": {
                 "email": {
-                    "description": "The candidate's email address.",
-                    "type": "string"
+                    "description": "Email address",
+                    "type": "string",
+                    "format": "email"
                 },
                 "phone": {
-                    "description": "The candidte's phone number.",
-                    "type": "string"
+                    "description": "Phone number",
+                    "type": "string",
+                    "pattern": "^[0-9]{3}-[0-9]{3}-[0-9]{4}$"
                 },
                 "linkedin": {
-                    "description": "A link to the candidate's LinkedIn profile.",
+                    "description": "LinkedIn profile link",
                     "type": "string"
                 }
             }
+        },
+        "education": {
+            "description": "Education history",
+            "type": "array",
+            "items": {
+                "$ref": "#/$defs/education"
+            },
+            "uniqueItems": true
+        },
+        "skills": {
+            "description": "Skills",
+            "type": "array",
+            "items": {
+                "$ref": "#/$defs/skill"
+            },
+            "uniqueItems": true
+        },
+        "experience": {
+            "description": "Employment history",
+            "type": "array",
+            "items": {
+                "$ref": "#/$defs/experience"
+            },
+            "uniqueItems": true
+        },
+        "projects": {
+            "description": "Projects",
+            "type": "array",
+            "items": {
+                "$ref": "#/$defs/project"
+            },
+            "uniqueItems": true
+        },
+        "leadership": {
+            "description": "Leadership experience",
+            "type": "array",
+            "items": {
+                "$ref": "#/$defs/leadership"
+            },
+            "uniqueItems": true
+        }
+    },
+    "required": [
+        "meta",
+        "info",
+        "contact"
+    ],
+    "$defs": {
+        "date": {
+            "description": "A date given by month and year",
+            "type": "object",
+            "properties": {
+                "year": {
+                    "type": "integer"
+                },
+                "month": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 12
+                }
+            },
+            "required": [
+                "year",
+                "month"
+            ]
+        },
+        "location": {
+            "description": "A geographical location",
+            "type": "object",
+            "properties": {
+                "city": {
+                    "type": "string"
+                },
+                "state": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "city",
+                "state"
+            ]
+        },
+        "position": {
+            "description": "A position held at a company/organization",
+            "type": "object",
+            "properties": {
+                "title": {
+                    "description": "Title of the position",
+                    "type": "string"
+                },
+                "start": {
+                    "description": "Date started working in the position",
+                    "$ref": "#/$defs/date"
+                },
+                "end": {
+                    "description": "Date stopped working in the position",
+                    "$ref": "#/$defs/date"
+                }
+            },
+            "required": [
+                "title",
+                "start"
+            ]
+        },
+        "education": {
+            "description": "Education history entry",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "description": "Name of Institution",
+                    "type": "string"
+                },
+                "degree": {
+                    "description": "Degree earned / to be earned",
+                    "type": "string"
+                },
+                "location": {
+                    "description": "Location while attending the institution",
+                    "$ref": "#/$defs/location"
+                },
+                "graduated": {
+                    "description": "Date graduated / expected to graduate",
+                    "$ref": "#/$defs/date"
+                },
+                "highlights": {
+                    "description": "Key points about the author's achievements while attending this institution",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "name",
+                "degree",
+                "location",
+                "graduated",
+                "highlights"
+            ]
+        },
+        "skill": {
+            "description": "A skill category of the author, along with example of it",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "description": "Name of the skill",
+                    "type": "string"
+                },
+                "examples": {
+                    "description": "Examples of the skill in use",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "uniqueItems": true,
+                    "minContains": 1
+                }
+            },
+            "required": [
+                "name",
+                "examples"
+            ]
+        },
+        "experience": {
+            "description": "Employment history entry",
+            "type": "object",
+            "properties": {
+                "company": {
+                    "description": "Name of the company",
+                    "type": "string"
+                },
+                "location": {
+                    "description": "Location during the employment",
+                    "$ref": "#/$defs/location"
+                },
+                "position": {
+                    "description": "Position held at the company",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/position"
+                    },
+                    "uniqueItems": true,
+                    "minContains": 1
+                },
+                "highlights": {
+                    "description": "Key points about the author's achievements while working in this role",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "company",
+                "location",
+                "position",
+                "highlights"
+            ]
+        },
+        "project": {
+            "description": "A project the author has worked on",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "description": "Name of the project",
+                    "type": "string"
+                },
+                "context": {
+                    "description": "Context in which the project was done, e.g. class project or personal project",
+                    "type": "string"
+                },
+                "start": {
+                    "description": "Date started working on the project",
+                    "$ref": "#/$defs/date"
+                },
+                "end": {
+                    "description": "Date stopped working on the project",
+                    "$ref": "#/$defs/date"
+                },
+                "highlights": {
+                    "description": "Key points about the project",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "name",
+                "context",
+                "start",
+                "highlights"
+            ]
+        },
+        "leadership": {
+            "description": "Leadership history entry",
+            "type": "object",
+            "properties": {
+                "company": {
+                    "description": "Name of the organization",
+                    "type": "string"
+                },
+                "location": {
+                    "description": "Location while the position was held",
+                    "$ref": "#/$defs/location"
+                },
+                "position": {
+                    "description": "Position held at the organization",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/position"
+                    },
+                    "uniqueItems": true,
+                    "minContains": 1
+                },
+                "highlights": {
+                    "description": "Key points about the author's achievements while working in this role",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "company",
+                "location",
+                "position",
+                "highlights"
+            ]
         }
     }
 }

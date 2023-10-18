@@ -1,7 +1,8 @@
 # Resume
 
 I got tired of having to update my resume in three different places (Word document, website, and LinkedIn) for every change, so I created this repository to end that nonsense.
-The repository is now the single source of truth for my resume.
+My resume is now written as a JSON file, from which I generate a PDF using LaTeX.
+The JSON file is also consumed by my website.
 
 ## Features
 
@@ -10,7 +11,7 @@ The repository is now the single source of truth for my resume.
 - [ ] Inherit data files through the `meta.extends` field
 - [ ] Template LaTeX files through Jinja2
 - [ ] Create one-off resumes
-- [ ] Scrape LinkedIn profile and check for out of date information
+- [ ] Scrape LinkedIn profile and generate json from content
 
 ## Setup
 
@@ -34,7 +35,7 @@ I also feel resumes are so unique that I wanted to have my own schema and not be
 ## Acknowledgements
 
 - Resume template based on <https://github.com/posquit0/Awesome-CV> but heavily modified.
-- MY JSON schema is inspired by [JsonResume](https://jsonresume.org/schema/) and the [FRESH Resume Schema](https://github.com/fresh-standard/fresh-resume-schema/blob/master/schema/fresh-resume-schema_1.0.0-beta.json)
+- JSON schema is inspired by [JsonResume](https://jsonresume.org/schema/) and the [FRESH Resume Schema](https://github.com/fresh-standard/fresh-resume-schema/blob/master/schema/fresh-resume-schema_1.0.0-beta.json)
 
 ## Licenses
 
