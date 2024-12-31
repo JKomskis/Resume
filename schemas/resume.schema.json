@@ -5,23 +5,26 @@
     "description": "A resume describing one's education, skills, employment, projects, etc.",
     "type": "object",
     "properties": {
+        "$schema": {
+            "description": "The JSON schema for this resume",
+            "type": "string"
+        },
         "meta": {
             "description": "Metadata about the resume",
             "type": "object",
             "properties": {
-                "extends": {
-                    "description": "Resume file on which this one should be based. The extending file should be a delta that will be applied to the base. The base file may in turn extend another file.",
-                    "type": "string"
-                },
                 "version": {
                     "description": "The semantic version of this resume.",
-                    "type": "string"
+                    "type": "string",
+                    "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
                 },
                 "date": {
                     "description": "The date on which this file was authored or last revised.",
-                    "type": "string"
+                    "type": "string",
+                    "format": "date"
                 }
             },
+            "additionalProperties": false,
             "required": [
                 "version",
                 "date"
@@ -39,15 +42,18 @@
                     "description": "Last name",
                     "type": "string"
                 },
-                "location": {
-                    "description": "Current location",
-                    "$ref": "#/$defs/location"
-                },
                 "github": {
                     "description": "Github profile link",
-                    "type": "string"
+                    "type": "string",
+                    "format": "uri"
+                },
+                "website": {
+                    "description": "Personal website link",
+                    "type": "string",
+                    "format": "uri"
                 }
             },
+            "additionalProperties": false,
             "required": [
                 "firstname",
                 "lastname"
@@ -69,9 +75,11 @@
                 },
                 "linkedin": {
                     "description": "LinkedIn profile link",
-                    "type": "string"
+                    "type": "string",
+                    "format": "uri"
                 }
-            }
+            },
+            "additionalProperties": false
         },
         "education": {
             "description": "Education history",
@@ -119,36 +127,31 @@
         "info",
         "contact"
     ],
+    "additionalProperties": false,
     "$defs": {
         "date": {
-            "description": "A date given by month and year",
-            "type": "object",
-            "properties": {
-                "year": {
-                    "type": "integer"
-                },
-                "month": {
-                    "type": "integer",
-                    "minimum": 1,
-                    "maximum": 12
-                }
-            },
-            "required": [
-                "year",
-                "month"
-            ]
+            "description": "A date formatted as YYYY-MM",
+            "type": "string",
+            "pattern": "^[0-9]{4}-(0[0-9]|1[0-2])$"
         },
         "location": {
-            "description": "A geographical location",
+            "description": "A geographical location made up of city, state, and country (optional).",
             "type": "object",
             "properties": {
                 "city": {
+                    "description": "City",
                     "type": "string"
                 },
                 "state": {
+                    "description": "State",
+                    "type": "string"
+                },
+                "country": {
+                    "description": "Country",
                     "type": "string"
                 }
             },
+            "additionalProperties": false,
             "required": [
                 "city",
                 "state"
@@ -171,13 +174,14 @@
                     "$ref": "#/$defs/date"
                 }
             },
+            "additionalProperties": false,
             "required": [
                 "title",
                 "start"
             ]
         },
         "education": {
-            "description": "Education history entry",
+            "description": "Education entry",
             "type": "object",
             "properties": {
                 "name": {
@@ -204,6 +208,7 @@
                     }
                 }
             },
+            "additionalProperties": false,
             "required": [
                 "name",
                 "degree",
@@ -216,7 +221,7 @@
             "description": "A skill category of the author, along with example of it",
             "type": "object",
             "properties": {
-                "name": {
+                "category": {
                     "description": "Name of the skill",
                     "type": "string"
                 },
@@ -227,16 +232,17 @@
                         "type": "string"
                     },
                     "uniqueItems": true,
-                    "minContains": 1
+                    "minItems": 1
                 }
             },
+            "additionalProperties": false,
             "required": [
-                "name",
+                "category",
                 "examples"
             ]
         },
         "experience": {
-            "description": "Employment history entry",
+            "description": "Employment entry",
             "type": "object",
             "properties": {
                 "company": {
@@ -247,14 +253,14 @@
                     "description": "Location during the employment",
                     "$ref": "#/$defs/location"
                 },
-                "position": {
+                "positions": {
                     "description": "Position held at the company",
                     "type": "array",
                     "items": {
                         "$ref": "#/$defs/position"
                     },
                     "uniqueItems": true,
-                    "minContains": 1
+                    "minItems": 1
                 },
                 "highlights": {
                     "description": "Key points about the author's achievements while working in this role",
@@ -264,10 +270,11 @@
                     }
                 }
             },
+            "additionalProperties": false,
             "required": [
                 "company",
                 "location",
-                "position",
+                "positions",
                 "highlights"
             ]
         },
@@ -299,6 +306,7 @@
                     }
                 }
             },
+            "additionalProperties": false,
             "required": [
                 "name",
                 "context",
@@ -310,7 +318,7 @@
             "description": "Leadership history entry",
             "type": "object",
             "properties": {
-                "company": {
+                "organization": {
                     "description": "Name of the organization",
                     "type": "string"
                 },
@@ -318,14 +326,14 @@
                     "description": "Location while the position was held",
                     "$ref": "#/$defs/location"
                 },
-                "position": {
+                "positions": {
                     "description": "Position held at the organization",
                     "type": "array",
                     "items": {
                         "$ref": "#/$defs/position"
                     },
                     "uniqueItems": true,
-                    "minContains": 1
+                    "minItems": 1
                 },
                 "highlights": {
                     "description": "Key points about the author's achievements while working in this role",
@@ -335,10 +343,11 @@
                     }
                 }
             },
+            "additionalProperties": false,
             "required": [
-                "company",
+                "organization",
                 "location",
-                "position",
+                "positions",
                 "highlights"
             ]
         }

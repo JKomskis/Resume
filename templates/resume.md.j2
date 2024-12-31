@@ -1,0 +1,91 @@
+# {{info.firstname}} {{info.lastname}}
+
+{% if contact.phone %}
+- Phone: {{contact.phone}}
+{% endif %}
+{% if contact.email %}
+- Email: {{contact.email}}
+{% endif %}
+{% if info.website %}
+- Website: [{{info.website_short}}]({{info.website}})
+{% endif %}
+{% if info.github %}
+- Github: [{{info.github_short}}]({{info.github}})
+{% endif %}
+{% if contact.linkedin %}
+- LinkedIn: [{{contact.linkedin_short}}]({{contact.linkedin}})
+{% endif %}
+
+
+
+## Education
+{% for educationEntry in education %}
+
+### {{educationEntry.name}} - {{educationEntry.degree}}
+
+*{{educationEntry.location_str}} - {{educationEntry.graduated_str}}*
+
+{% for highlight in educationEntry.highlights%}
+- {{highlight}}
+{% endfor %}
+
+{% endfor %}
+
+
+
+## Skills
+
+{% for skill in skills %}
+- **{{ skill.category }}**: {{ skill.examples_str }}
+{% endfor %}
+
+
+
+## Experience
+{% for experienceEntry in experience %}
+
+### {{ experienceEntry.company }} (*{{ experienceEntry.location_str }}*)
+{% for position in experienceEntry.positions %}
+
+**{{ position.title }}**: {{ position.start_str }}-{{ position.end_str }}
+{% endfor %}
+
+{% for highlight in experienceEntry.highlights %}
+- {{ highlight }}
+{% endfor %}
+
+{% endfor %}
+
+
+
+## Projects
+{% for project in projects %}
+
+### {{ project.name }} - {{ project.context }}
+
+*{{ project.start_str }}-{{ project.end_str }}*
+
+{% for highlight in project.highlights %}
+- {{ highlight }}
+{% endfor %}
+
+{% endfor %}
+
+
+
+## Leadership
+{% for leadershipEntry in leadership %}
+
+### {{ leadershipEntry.organization }} (*{{ leadershipEntry.location_str }}*)
+{% for position in leadershipEntry.positions %}
+
+**{{ position.title }}**: {{ position.start_str }}-{{ position.end_str }}
+
+{% endfor %}
+
+{% for highlight in leadershipEntry.highlights %}
+- {{ highlight }}
+{% endfor %}
+
+{% endfor %}
+
