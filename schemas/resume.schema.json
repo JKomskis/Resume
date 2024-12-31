@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://github.com/JKomskis/Resume/blob/main/schema/resume.schema.json",
+    "$id": "https://github.com/JKomskis/Resume/blob/main/schemas/resume.schema.json",
     "title": "Resume",
     "description": "A resume describing one's education, skills, employment, projects, etc.",
     "type": "object",

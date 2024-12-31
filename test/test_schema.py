@@ -143,7 +143,6 @@ class SchemaTests(unittest.TestCase):
                     resume_copy["info"][field] = invalid_uri
                 else:
                     resume_copy["contact"][field] = invalid_uri
-                print(resume_copy)
                 self.assertFalse(
                     validator.is_valid(resume_copy),
                     f"Invalid URI '{invalid_uri}' in field '{field}' was determined to be valid",
