@@ -1,0 +1,161 @@
+%% resume.tex
+%% Copyright 2023 Joseph Komskis
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+%   https://www.latex-project.org/lppl.txt
+% and version 1.3c or later is part of all distributions of LaTeX
+% version 2008 or later.
+%
+% This work has the LPPL maintenance status `maintained'.
+%
+% The Current Maintainer of this work is Joseph Komskis.
+%
+% This work consists of the files resume.tex and resume.cls
+
+\documentclass[letterpaper,10pt]{resume}
+
+\usepackage{hyperref}
+\hypersetup{
+    pdftitle={Resume - {{info.lastname}}, {{info.firstname}}},
+    pdfauthor={ {{-info.firstname}} {{info.lastname-}} },
+    pdfpagemode=FullScreen,
+}
+
+\begin{document}
+
+\begin{tightcenter}
+    \LARGE \textbf{ {{-info.firstname}} {{info.lastname-}} }
+\end{tightcenter}
+
+\begin{header}
+    \headerinfoitem{\faIcon{phone-alt}}{ {{- contact.phone -}} }
+    \headerinfoitem{\faIcon[regular]{envelope}}{ {{- contact.email -}} }
+    \headerinfoitem{\faIcon{globe-americas}}{\href{ {{- info.website -}} }{ {{- info.website_short -}} }}
+    \headerinfoitem{\faIcon{github}}{\href{ {{- info.github -}} }{ {{- info.github_short -}} }}
+    \headerinfoitem{\faIcon{linkedin-in}}{\href{ {{- contact.linkedin -}} }{ {{- contact.linkedin_short -}} }}
+\end{header}
+
+
+
+\resumesection{Education}
+
+{% for educationEntry in education %}
+\resumeentry
+    { {{- educationEntry.name -}} }
+    { {{- educationEntry.location_str -}} }
+    {   \begin{subtitleitems}
+            \item{\subtitle{ {{- educationEntry.degree -}} }{ {{- educationEntry.graduated_str -}} }{}}
+        \end{subtitleitems}
+    }
+    {
+        \begin{resumeentryitems}
+            {% for highlight in educationEntry.highlights %}
+            \item { {{- highlight -}} }
+            {% endfor %}
+        \end{resumeentryitems}
+    }
+
+{% if loop.index < education|length %}
+\bigskip
+{% endif %}
+
+{% endfor %}
+
+
+
+\resumesection{Skills}
+
+{% for skillEntry in skills %}
+\autoleftrightline{ {\bfseries {{ skillEntry.category -}} }}{ {{- skillEntry.examples_str -}} }
+
+{% endfor %}
+
+
+
+\resumesection{Experience}
+
+{% for workEntry in experience %}
+\resumeentry
+    { {{- workEntry.company -}} }
+    { {{- workEntry.location_str -}} }
+    {
+        \begin{subtitleitems}
+            {% for position in workEntry.positions %}
+            \item{\subtitle{ {{- position.title -}} }{ {{- position.start_str -}} }{ {{- position.end_str -}} }}
+            {% endfor %}
+        \end{subtitleitems}
+    }
+    {
+        \begin{resumeentryitems}
+            {% for highlight in workEntry.highlights %}
+            \item { {{- highlight -}} }
+            {% endfor %}
+        \end{resumeentryitems}
+    }
+
+{% if loop.index < experience|length %}
+\bigskip
+{% endif %}
+
+{% endfor %}
+
+
+
+\resumesection{Projects}
+
+{% for projectEntry in projects %}
+\resumeentry
+    { {{- projectEntry.name -}} }
+    { }
+    {
+        \begin{subtitleitems}
+            \item{\subtitle{ {{- projectEntry.context -}} }{ {{- projectEntry.start_str -}} }{ {{- projectEntry.end_str -}} }}
+        \end{subtitleitems}
+    }
+    {
+        \begin{resumeentryitems}
+            {% for highlight in projectEntry.highlights %}
+            \item { {{- highlight -}} }
+            {% endfor %}
+        \end{resumeentryitems}
+    }
+
+{% if loop.index < projects|length %}
+\bigskip
+{% endif %}
+
+{% endfor %}
+
+
+
+\resumesection{Leadership}
+
+{% for leadershipEntry in leadership %}
+\resumeentry
+    { {{- leadershipEntry.organization -}} }
+    { {{- leadershipEntry.location_str -}} }
+    {
+        \begin{subtitleitems}
+            {% for position in leadershipEntry.positions %}
+            \item{\subtitle{ {{- position.title -}} }{ {{- position.start_str -}} }{ {{- position.end_str -}} }}
+            {% endfor %}
+        \end{subtitleitems}
+    }
+    {
+        \begin{resumeentryitems}
+            {% for highlight in leadershipEntry.highlights %}
+            \item { {{- highlight -}} }
+            {% endfor %}
+        \end{resumeentryitems}
+    }
+
+{% if loop.index < leadership|length %}
+\bigskip
+{% endif %}
+
+{% endfor %}
+
+\end{document}

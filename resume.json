@@ -1,0 +1,423 @@
+{
+    "$schema": "schemas/resume.schema.json",
+    "meta": {
+        "version": "1.0.0",
+        "date": "2024-11-09"
+    },
+    "info": {
+        "firstname": "Joseph",
+        "lastname": "Komskis",
+        "github": "https://github.com/JKomskis",
+        "website": "https://komsk.is"
+    },
+    "contact": {
+        "linkedin": "https://linkedin.com/in/joseph-komskis"
+    },
+    "education": [
+        {
+            "name": "Georgia Institute of Technology",
+            "degree": "Master of Science in Computer Science",
+            "location": {
+                "city": "Atlanta",
+                "state": "GA"
+            },
+            "graduated": "2022-05",
+            "highlights": [
+                "GPA: 4.0",
+                "Specialization: Computing Systems",
+                "Relevant Coursework: Advanced Operating Systems, System Design in Cloud Computing, Database System Implementation, High Performance Computer Architecture, Computer Networks, Graduate Algorithms, Programming Languages"
+            ]
+        },
+        {
+            "name": "University of Florida",
+            "degree": "Bachelor of Science in Computer Science",
+            "location": {
+                "city": "Gainesville",
+                "state": "FL"
+            },
+            "graduated": "2020-05",
+            "highlights": [
+                "GPA: 3.98; Cum Laude; Honors Program",
+                "Minor: Business Administration"
+            ]
+        }
+    ],
+    "skills": [
+        {
+            "category": "Languages",
+            "examples": [
+                "C++",
+                "Python",
+                "Java",
+                "PowerShell",
+                "SQL",
+                "Rust",
+                "Go",
+                "HTML",
+                "CSS",
+                "JavaScript",
+                "React",
+                "Kotlin",
+                "Haskell"
+            ]
+        },
+        {
+            "category": "Tools/Technologies",
+            "examples": [
+                "Git",
+                "GitHub",
+                "Spark",
+                "Hadoop",
+                "Docker",
+                "Etcd",
+                "MongoDB",
+                "NodeJS",
+                "Azure",
+                "LaTeX",
+                "K8s",
+                "ANTLR"
+            ]
+        },
+        {
+            "category": "Processes",
+            "examples": [
+                "Agile Development",
+                "Scrum",
+                "Kanban",
+                "Code Review",
+                "CI/CD",
+                "TDD",
+                "ER Modeling",
+                "UML Modeling"
+            ]
+        },
+        {
+            "category": "Communication",
+            "examples": [
+                "Design Documents",
+                "Technical Presentations",
+                "Research Papers"
+            ]
+        },
+        {
+            "category": "Business Administration",
+            "examples": [
+                "Accounting",
+                "Finance",
+                "Management",
+                "Marketing"
+            ]
+        },
+        {
+            "category": "Other",
+            "examples": [
+                "Object-Oriented Programming",
+                "Design Patterns"
+            ]
+        }
+    ],
+    "experience": [
+        {
+            "company": "Microsoft",
+            "location": {
+                "city": "Redmond",
+                "state": "WA"
+            },
+            "positions": [
+                {
+                    "title": "Software Engineer II",
+                    "start": "2024-09"
+                },
+                {
+                    "title": "Software Engineer",
+                    "start": "2022-08",
+                    "end": "2024-09"
+                }
+            ],
+            "highlights": [
+                "Worked on the ADLS Gen2 team",
+                "Reduced recursive listing latency by 6x-12x by optimizing namespace calls and reducing name resolution calls",
+                "Improved system performance by implementing a 0-copy interface for entities"
+            ]
+        },
+        {
+            "company": "Georgia Institute of Technology",
+            "location": {
+                "city": "Atlanta",
+                "state": "GA"
+            },
+            "positions": [
+                {
+                    "title": "Graduate Teaching Assistant - Advanced Operating Systems",
+                    "start": "2022-01",
+                    "end": "2022-05"
+                },
+                {
+                    "title": "Graduate Teaching Assistant - Introduction to Database Systems",
+                    "start": "2021-01",
+                    "end": "2021-12"
+                }
+            ],
+            "highlights": [
+                "Built an autograding pipeline for student projects using Azure Batch to provide students with immediate grading feedback",
+                "Created and graded phases of a semester group project focused on designing and implementing a database application",
+                "Drafted exam questions and grading rubrics; graded exams"
+            ]
+        },
+        {
+            "company": "Microsoft",
+            "location": {
+                "city": "Ft Lauderdale",
+                "state": "FL"
+            },
+            "positions": [
+                {
+                    "title": "Software Engineering Intern (Virtual Internship)",
+                    "start": "2021-05",
+                    "end": "2021-08"
+                }
+            ],
+            "highlights": [
+                "Designed and implemented a proof-of-concept platform for moving compute heavy tasks from Azure Storage using Spark",
+                "Analyzed several deployment options and weighed their tradeoffs in several aspects, such as control, scalability, and security",
+                "Tested the performance of the existing query acceleration feature and proposed a new hybrid query processing approach"
+            ]
+        },
+        {
+            "company": "Microsoft",
+            "location": {
+                "city": "Ft Lauderdale",
+                "state": "FL"
+            },
+            "positions": [
+                {
+                    "title": "Software Engineering Intern (Virtual Internship)",
+                    "start": "2020-05",
+                    "end": "2020-08"
+                }
+            ],
+            "highlights": [
+                "Implemented share caching in Azure Data Lake Store, reducing duplicate requests to its namespace service by up to 99%",
+                "Collected and analyzed log files from production machines to estimate impact and tune caching parameters",
+                "Executed test workloads before and after caching to evaluate performance improvements"
+            ]
+        },
+        {
+            "company": "University of Florida",
+            "location": {
+                "city": "Gainesville",
+                "state": "FL"
+            },
+            "positions": [
+                {
+                    "title": "Undergraduate Teaching Assistant - Data Structures and Algorithms",
+                    "start": "2018-08",
+                    "end": "2020-05"
+                }
+            ],
+            "highlights": [
+                "Taught a weekly discussion of 50 students, administered and graded quizzes, reviewed and gave context to material",
+                "Held weekly office hours to help students with assignments and projects",
+                "Organized the creation of an interface, test suite, and automatic grader for a project implementing Huffman's Algorithm"
+            ]
+        },
+        {
+            "company": "Microsoft",
+            "location": {
+                "city": "Redmond",
+                "state": "WA"
+            },
+            "positions": [
+                {
+                    "title": "Software Engineering Intern",
+                    "start": "2019-05",
+                    "end": "2019-08"
+                }
+            ],
+            "highlights": [
+                "Implemented directory range partitioning to increase throughput of the hierarchical namespace service of Azure Storage",
+                "Demonstrated performance improvements using scale benchmarks",
+                "Documented the design and implementation to facilitate understanding of the project in the future"
+            ]
+        },
+        {
+            "company": "Ultimate Software",
+            "location": {
+                "city": "Weston",
+                "state": "FL"
+            },
+            "positions": [
+                {
+                    "title": "Software Engineering Intern",
+                    "start": "2018-05",
+                    "end": "2018-08"
+                }
+            ],
+            "highlights": [
+                "Shortened the feedback loop of the CI/CD pipeline and optimized acceptance testing, increasing developer efficiency",
+                "Created a new CI/CD pipeline for deploying and reconciling forms to assist migrating to a microservices architecture",
+                "Tested and reviewed code developed by other team members to ensure coding standards were met"
+            ]
+        }
+    ],
+    "projects": [
+        {
+            "name": "MapReduce in Go",
+            "context": "System Design in Cloud Computing Pair Project (Go)",
+            "start": "2022-01",
+            "end": "2022-05",
+            "highlights": [
+                "Recreated MapReduce in Go, with master failover capabilities, and deployed on Azure Kubernetes Service",
+                "Implemented the logic for master failover and communication of tasks from leader node to worker nodes"
+            ]
+        },
+        {
+            "name": "SQL Typecheck",
+            "context": "Programming Languages Term Project (Python)",
+            "start": "2022-01",
+            "end": "2022-05",
+            "highlights": [
+                "Defined an abstract syntax and typing rules for a subset of SQL",
+                "Implemented and unit tested a parser and type checker for queries"
+            ]
+        },
+        {
+            "name": "Flash Storage Buffer Manager",
+            "context": "Database System Implementation Term Project (Python)",
+            "start": "2021-08",
+            "end": "2021-12",
+            "highlights": [
+                "Evaluated and compared buffer replacement policies optimized for flash storage, especially for video analytics access patterns",
+                "Modified an existing video analytics DBMS to gather data access patterns",
+                "Implemented a buffer manager and replayed access patterns under different policies"
+            ]
+        },
+        {
+            "name": "Video Logging and Recovery",
+            "context": "Database System Implementation Term Project (Python)",
+            "start": "2021-01",
+            "end": "2021-05",
+            "highlights": [
+                "Designed and implemented a variation of the ARIES recovery protocol optimized for the logging and recovery of video data",
+                "Created an algorithm for logically logging changes made to video data and measured its improvement over physical logging"
+            ]
+        },
+        {
+            "name": "Spatial Database Bench",
+            "context": "Database Systems Concepts and Design (Python)",
+            "start": "2020-08",
+            "end": "2020-12",
+            "highlights": [
+                "Planned, developed, and executed a benchmark for various spatial functions on multiple databases",
+                "Tested the impact of several indices on query performance"
+            ]
+        },
+        {
+            "name": "Multi-Cloud Failover Service",
+            "context": "Senior Project (Kotlin, Spring Boot, React)",
+            "start": "2020-01",
+            "end": "2020-05",
+            "highlights": [
+                "Designed and developed an application agnostic service to provide high availability and automatic failover in the cloud",
+                "Implemented an algorithm for detecting performance degradation or hardware failure and the web front-end"
+            ]
+        },
+        {
+            "name": "Visual Programming Language Framework",
+            "context": "Design Patterns Term Project",
+            "start": "2020-03",
+            "end": "2020-04",
+            "highlights": [
+                "Architected a framework to be used in the creation of Visual Programming Languages",
+                "Devised the overall layered system architecture and the subsystem connecting the models, views, and presenters"
+            ]
+        },
+        {
+            "name": "OOP There It Is",
+            "context": "Object-Oriented Programming Term Project (Java)",
+            "start": "2018-01",
+            "end": "2018-05",
+            "highlights": [
+                "Designed and developed a Role-Playing Game using proper object-oriented software principles",
+                "Implemented the backend representation of the world, items, and entities to be displayed by the frontend"
+            ]
+        },
+        {
+            "name": "UF Student Infosec Team Portal",
+            "context": "Software Engineering Term Project (Javascript/HTML/CSS)",
+            "start": "2018-01",
+            "end": "2018-05",
+            "highlights": [
+                "Contributed to a portal used by the members of SIT to view club resources, practice challenges, and upload resumes",
+                "Interfaced with Amazon Web Services to store users' resumes and practice problem solutions"
+            ]
+        }
+    ],
+    "leadership": [
+        {
+            "organization": "University of Florida Programming Team",
+            "location": {
+                "city": "Gainesville",
+                "state": "FL"
+            },
+            "positions": [
+                {
+                    "title": "Captain",
+                    "start": "2019-01",
+                    "end": "2020-05"
+                },
+                {
+                    "title": "Lead",
+                    "start": "2018-09",
+                    "end": "2019-01"
+                }
+            ],
+            "highlights": [
+                "Competed in ACM Programming Competitions focusing on data structures and algorithms",
+                "Led meetings and taught competitive programming topics such as algorithm complexity",
+                "Organized an interview workshop to teach tips and techniques for behavioral and technical questions",
+                "SER 2017: 20/47    SER 2018: 10/36    SER 2019: 11/36"
+            ]
+        },
+        {
+            "organization": "HSPC@UF 2020",
+            "location": {
+                "city": "Gainesville",
+                "state": "FL"
+            },
+            "positions": [
+                {
+                    "title": "Organizer",
+                    "start": "2019-11",
+                    "end": "2020-02"
+                }
+            ],
+            "highlights": [
+                "Coordinated a 4-hour high school level programming competition for 13 teams from several schools",
+                "Collected problem ideas and refined them into a problem set with thorough tests and sample submissions",
+                "Collaborated with the UF chapter of ACM to organize the event schedule, recruit volunteers, and reserve spaces",
+                "Overhauled the existing contest setup and supervised volunteers setting up and tearing down the contest equipment"
+            ]
+        },
+        {
+            "organization": "UF Honor Chords",
+            "location": {
+                "city": "Gainesville",
+                "state": "FL"
+            },
+            "positions": [
+                {
+                    "title": "Secretary",
+                    "start": "2017-05",
+                    "end": "2018-05"
+                }
+            ],
+            "highlights": [
+                "Recorded detailed minutes at officer meetings",
+                "Tracked member attendance",
+                "Organized officer elections for the 2018-2019 school year",
+                "Liaised between the club and its faculty advisor"
+            ]
+        }
+    ]
+}
