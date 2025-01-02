@@ -88,11 +88,13 @@ jobs:
       - name: Render to LaTeX
         run: python src/create_resume.py templates/resume.tex.j2 resume.json -o out/resume.tex
 
+        # Ignore the garamondx package since it comes from te getnonfreefonts script
       - name: Get packages
         run: |
-          grep -hoE '\\usepackage(\[[^]]*\])?\{[^}]+\}' out/*.tex out/*.cls \
-          | sed -E 's/.*\{([^}]+)\}/\1/' \
-          | sort -u > requirements-from-latex-files.txt
+            grep -hoE '\\usepackage(\[[^]]*\])?\{[^}]+\}' out/*.tex out/*.cls \
+            | sed -E 's/.*\{([^}]+)\}/\1/' \
+            | grep -v '^garamondx$' \
+            | sort -u > requirements-from-latex-files.txt
 
       - uses: teatimeguest/setup-texlive-action@v3
         with:
