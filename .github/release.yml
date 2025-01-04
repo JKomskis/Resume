@@ -1,0 +1,25 @@
+changelog:
+  categories:
+    - title: Resume
+      labels:
+        - "resume"
+    - title: Resume Schema
+      labels:
+        - "schema"
+    - title: Resume Templates
+      labels:
+        - "template"
+    - title: Tooling
+      labels:
+        - "tooling"
+    - title: "Bug Fixes"
+      labels:
+        - "fix"
+        - "bugfix"
+        - "bug"
+    - title: 'Dependencies'
+      labels:
+        - 'dependencies'
+    - title: Other Changes
+      labels:
+        - '*'
