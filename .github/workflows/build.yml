@@ -71,7 +71,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: resume-md
-          path: out/resume.md
+          path: out/*.md
           if-no-files-found: error
 
   latex:
@@ -118,11 +118,14 @@ jobs:
         run: getnonfreefonts --sys garamondx
 
       - name: Create PDF
-        run: latexmk -synctex=1 -interaction=nonstopmode -file-line-error -xelatex -cd out/resume.tex
+        run: |
+          for file in out/*.tex; do
+            latexmk -synctex=1 -interaction=nonstopmode -file-line-error -xelatex -cd "$file"
+          done
 
       - name: Upload PDF
         uses: actions/upload-artifact@v4
         with:
           name: resume-pdf
-          path: out/resume.pdf
+          path: out/*.pdf
           if-no-files-found: error
