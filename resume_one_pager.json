@@ -90,30 +90,6 @@
                 "ER Modeling",
                 "UML Modeling"
             ]
-        },
-        {
-            "category": "Communication",
-            "examples": [
-                "Design Documents",
-                "Technical Presentations",
-                "Research Papers"
-            ]
-        },
-        {
-            "category": "Business Administration",
-            "examples": [
-                "Accounting",
-                "Finance",
-                "Management",
-                "Marketing"
-            ]
-        },
-        {
-            "category": "Other",
-            "examples": [
-                "Object-Oriented Programming",
-                "Design Patterns"
-            ]
         }
     ],
     "experience": [
@@ -182,82 +158,6 @@
                 "Analyzed several deployment options and weighed their tradeoffs in several aspects, such as control, scalability, and security",
                 "Tested the performance of the existing query acceleration feature and proposed a new hybrid query processing approach"
             ]
-        },
-        {
-            "company": "Microsoft",
-            "location": {
-                "city": "Ft Lauderdale",
-                "state": "FL"
-            },
-            "positions": [
-                {
-                    "title": "Software Engineering Intern (Virtual Internship)",
-                    "start": "2020-05",
-                    "end": "2020-08"
-                }
-            ],
-            "highlights": [
-                "Implemented share caching in Azure Data Lake Store, reducing duplicate requests to its namespace service by up to 99%",
-                "Collected and analyzed log files from production machines to estimate impact and tune caching parameters",
-                "Executed test workloads before and after caching to evaluate performance improvements"
-            ]
-        },
-        {
-            "company": "University of Florida",
-            "location": {
-                "city": "Gainesville",
-                "state": "FL"
-            },
-            "positions": [
-                {
-                    "title": "Undergraduate Teaching Assistant - Data Structures and Algorithms",
-                    "start": "2018-08",
-                    "end": "2020-05"
-                }
-            ],
-            "highlights": [
-                "Taught a weekly discussion of 50 students, administered and graded quizzes, reviewed and gave context to material",
-                "Held weekly office hours to help students with assignments and projects",
-                "Organized the creation of an interface, test suite, and automatic grader for a project implementing Huffman's Algorithm"
-            ]
-        },
-        {
-            "company": "Microsoft",
-            "location": {
-                "city": "Redmond",
-                "state": "WA"
-            },
-            "positions": [
-                {
-                    "title": "Software Engineering Intern",
-                    "start": "2019-05",
-                    "end": "2019-08"
-                }
-            ],
-            "highlights": [
-                "Implemented directory range partitioning to increase throughput of the hierarchical namespace service of Azure Storage",
-                "Demonstrated performance improvements using scale benchmarks",
-                "Documented the design and implementation to facilitate understanding of the project in the future"
-            ]
-        },
-        {
-            "company": "Ultimate Software",
-            "location": {
-                "city": "Weston",
-                "state": "FL"
-            },
-            "positions": [
-                {
-                    "title": "Software Engineering Intern",
-                    "start": "2018-05",
-                    "end": "2018-08"
-                }
-            ],
-            "highlights": [
-                "Shortened the feedback loop of the CI/CD pipeline and optimized acceptance testing, increasing developer efficiency",
-                "Created a new CI/CD pipeline for deploying and reconciling forms to assist migrating to a microservices architecture",
-                "Tested and reviewed code developed by other team members to ensure coding standards were met"
-            ]
         }
     ],
     "projects": [
@@ -279,47 +179,6 @@
             "highlights": [
                 "Defined an abstract syntax and typing rules for a subset of SQL",
                 "Implemented and unit tested a parser and type checker for queries"
-            ]
-        },
-        {
-            "name": "Flash Storage Buffer Manager",
-            "context": "Database System Implementation Term Project (Python)",
-            "start": "2021-08",
-            "end": "2021-12",
-            "highlights": [
-                "Evaluated and compared buffer replacement policies optimized for flash storage, especially for video analytics access patterns",
-                "Modified an existing video analytics DBMS to gather data access patterns",
-                "Implemented a buffer manager and replayed access patterns under different policies"
-            ]
-        },
-        {
-            "name": "Video Logging and Recovery",
-            "context": "Database System Implementation Term Project (Python)",
-            "start": "2021-01",
-            "end": "2021-05",
-            "highlights": [
-                "Designed and implemented a variation of the ARIES recovery protocol optimized for the logging and recovery of video data",
-                "Created an algorithm for logically logging changes made to video data and measured its improvement over physical logging"
-            ]
-        },
-        {
-            "name": "Spatial Database Bench",
-            "context": "Database Systems Concepts and Design (Python)",
-            "start": "2020-08",
-            "end": "2020-12",
-            "highlights": [
-                "Planned, developed, and executed a benchmark for various spatial functions on multiple databases",
-                "Tested the impact of several indices on query performance"
-            ]
-        },
-        {
-            "name": "Multi-Cloud Failover Service",
-            "context": "Senior Project (Kotlin, Spring Boot, React)",
-            "start": "2020-01",
-            "end": "2020-05",
-            "highlights": [
-                "Designed and developed an application agnostic service to provide high availability and automatic failover in the cloud",
-                "Implemented an algorithm for detecting performance degradation or hardware failure and the web front-end"
             ]
         }
     ],
@@ -347,26 +206,6 @@
                 "Led meetings and taught competitive programming topics such as algorithm complexity",
                 "Organized an interview workshop to teach tips and techniques for behavioral and technical questions",
                 "SER 2017: 20/47    SER 2018: 10/36    SER 2019: 11/36"
-            ]
-        },
-        {
-            "organization": "HSPC@UF 2020",
-            "location": {
-                "city": "Gainesville",
-                "state": "FL"
-            },
-            "positions": [
-                {
-                    "title": "Organizer",
-                    "start": "2019-11",
-                    "end": "2020-02"
-                }
-            ],
-            "highlights": [
-                "Coordinated a 4-hour high school level programming competition for 13 teams from several schools",
-                "Collected problem ideas and refined them into a problem set with thorough tests and sample submissions",
-                "Collaborated with the UF chapter of ACM to organize the event schedule, recruit volunteers, and reserve spaces",
-                "Overhauled the existing contest setup and supervised volunteers setting up and tearing down the contest equipment"
             ]
         }
     ]

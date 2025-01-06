@@ -321,6 +321,36 @@
                 "Designed and developed an application agnostic service to provide high availability and automatic failover in the cloud",
                 "Implemented an algorithm for detecting performance degradation or hardware failure and the web front-end"
             ]
+        },
+        {
+            "name": "Visual Programming Language Framework",
+            "context": "Design Patterns Term Project",
+            "start": "2020-03",
+            "end": "2020-04",
+            "highlights": [
+                "Architected a framework to be used in the creation of Visual Programming Languages",
+                "Devised the overall layered system architecture and the subsystem connecting the models, views, and presenters"
+            ]
+        },
+        {
+            "name": "OOP There It Is",
+            "context": "Object-Oriented Programming Term Project (Java)",
+            "start": "2018-01",
+            "end": "2018-05",
+            "highlights": [
+                "Designed and developed a Role-Playing Game using proper object-oriented software principles",
+                "Implemented the backend representation of the world, items, and entities to be displayed by the frontend"
+            ]
+        },
+        {
+            "name": "UF Student Infosec Team Portal",
+            "context": "Software Engineering Term Project (Javascript/HTML/CSS)",
+            "start": "2018-01",
+            "end": "2018-05",
+            "highlights": [
+                "Contributed to a portal used by the members of SIT to view club resources, practice challenges, and upload resumes",
+                "Interfaced with Amazon Web Services to store users' resumes and practice problem solutions"
+            ]
         }
     ],
     "leadership": [
@@ -367,6 +397,26 @@
                 "Collected problem ideas and refined them into a problem set with thorough tests and sample submissions",
                 "Collaborated with the UF chapter of ACM to organize the event schedule, recruit volunteers, and reserve spaces",
                 "Overhauled the existing contest setup and supervised volunteers setting up and tearing down the contest equipment"
+            ]
+        },
+        {
+            "organization": "UF Honor Chords",
+            "location": {
+                "city": "Gainesville",
+                "state": "FL"
+            },
+            "positions": [
+                {
+                    "title": "Secretary",
+                    "start": "2017-05",
+                    "end": "2018-05"
+                }
+            ],
+            "highlights": [
+                "Recorded detailed minutes at officer meetings",
+                "Tracked member attendance",
+                "Organized officer elections for the 2018-2019 school year",
+                "Liaised between the club and its faculty advisor"
             ]
         }
     ]
