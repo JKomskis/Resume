@@ -195,21 +195,24 @@ def main():
     parser.add_argument("input_file", help="Input template file")
     parser.add_argument("data_file", help="Input data file")
     parser.add_argument(
-        "-o",
-        "--output",
-        help="Output file (default: input file with extension removed)",
+        "-d",
+        "--output_directory",
+        help="Output directory (default: parent directory of the data file)",
     )
     args = parser.parse_args()
 
     template_file = Path(args.input_file)
     data_file = Path(args.data_file)
-    if not args.output:
-        suffixes = template_file.suffixes
-        if suffixes and suffixes[-1] == ".j2":
-            suffixes.pop()
-        output_file = data_file.with_suffix("".join(suffixes))
+    if not args.output_directory:
+        out_dir = Path.cwd()
     else:
-        output_file = Path(args.output)
+        out_dir = Path(args.output_directory)
+
+    filename_base = data_file.stem
+    suffixes = template_file.suffixes
+    if suffixes and suffixes[-1] == ".j2":
+        suffixes.pop()
+    output_file = out_dir / f"{filename_base}{''.join(suffixes)}"
 
     output_file.parent.mkdir(parents=True, exist_ok=True)
 

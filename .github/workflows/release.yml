@@ -29,6 +29,7 @@ jobs:
         with:
           tag_name: ${{ github.event.release.tag_name }}
           files: |
-            out/resume.*
+            out/*.pdf
+            out/*.md
             resume.json
           fail_on_unmatched_files: true
